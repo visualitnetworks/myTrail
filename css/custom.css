@@ -434,15 +434,14 @@ div[aria-describedby="adminLoginPnl"] button {
 /*Modales full-width*/
 div[aria-describedby="cRight"],div[aria-describedby="dlgInfoTrack"],
 div[aria-describedby="dlgDownTracks"] {
-    width: 100% !important;
-    max-width: 100%;
-    left: 0 !important;
-    top: 0 !important;
+    width: 80% !important;
+    left: calc(10%-25px) !important;
+    top: calc(10%-25px) !important;
     right: 0 !important;
     bottom: 0 !important;
-    height: 100vh !important;
+    height: 80% !important;
     border-radius: 0 !important;
-    padding-top: 50px !important;
+    padding: 50px !important;
     z-index: 10000000 !important;
 }
 

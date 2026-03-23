@@ -82,7 +82,6 @@ TR3cfg.setTR32 = function setTR32() {
 					tgt = TR3.controls.target;
 				}
 
-				var tgt = TR3.getIntersect(raycaster, [TR3cfg.tileGroup])[0][0].point;
 				spams.set("looktoward", [pos.x, pos.y, pos.z, tgt.x, tgt.y, tgt.z].map(function (each_element) {
 					return Number(each_element.toFixed());
 				}));
