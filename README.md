@@ -1,4 +1,4 @@
-##TerreTrail
+#TerreTrail
 Deportes y eventos deportivos
 
 Tecnología al servicio de la emoción y la competición
