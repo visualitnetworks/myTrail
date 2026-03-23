@@ -1,0 +1,708 @@
+/*
+        custom css
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Customización del sitio */
+
+
+/* Estilos generales */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+div {
+    font-family: 'Inter';
+    margin: 0;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.2em;
+}
+
+h2 {
+    font-size: 28px;
+    line-height: 1.05em;
+}
+
+a,
+button,
+#myturn,
+a *,
+button *,
+#myturn * {
+    cursor: pointer !important;
+}
+
+
+.btn-circular {
+    padding: 5px;
+    width: 34px;
+    height: 34px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    /*background-color: #fff !important;*/
+    font-size: smaller;
+}
+
+#TR3>div {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 25%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.75) 100%);
+}
+
+.white-icon {
+    filter: invert(100%) sepia(2%) saturate(13%) hue-rotate(97deg) brightness(105%) contrast(100%);
+}
+
+/* Bloque introductorio - Sección grupo*/
+
+.seccion-introductoria {
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contIntro {
+    position: fixed;
+    width: 100% !important;
+    transform: none !important;
+    top: 0px;
+    left: 0px !important;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 60px 20px 20px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+#contIntro>#logoIntro {
+    width: 260px;
+    margin: 0 !important;
+    transform: none !important;
+    content: url("empty.png");
+}
+
+#contIntro .modal-intro {
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 34px 38px;
+    max-width: 500px;
+}
+
+.modal-intro * {
+    text-align: center;
+}
+
+.modal-intro h2 {
+    font-weight: 700;
+    color: rgba(0, 0, 0, 1);
+    padding: 0 !important;
+    margin-bottom: 20px;
+}
+
+.modal-intro p {
+    color: rgba(141, 145, 152, 1);
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.modal-intro button {
+    margin-top: 0 !important;
+    background-color: rgba(239, 53, 86, 1) !important;
+    border-radius: 50px !important;
+    min-height: 60px;
+    font-size: 16px;
+}
+
+/* Desarrollado por */
+
+.desarrollado-por {
+    color: rgba(141, 145, 152, 1) !important;
+    width: 100% !important;
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    justify-content: center;
+}
+
+.desarrollado-por div {
+    font-size: 14px;
+    position: relative;
+    top: 3px;
+}
+
+/* Barra de progreso */
+#myturn {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    overflow: hidden;
+    font-weight: 600;
+}
+
+#myturn span {
+    display: inline-block;
+    position: absolute;
+    margin-top: 0;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+}
+
+#myturn progress {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 50px;
+    width: 100%;
+    height: 55px;
+    /*box-shadow: 1px 1px 4px rgba( 0, 0, 0, 0.2 );*/
+}
+
+#myturn progress::-webkit-progress-bar {
+    background-color: rgba(187, 187, 187, 1);
+    border-radius: 30px;
+}
+
+#myturn progress::-webkit-progress-value {
+    background-color: var(--mineColor);
+    border-radius: var(--border-progressBar);
+    display: 'block';
+    /*box-shadow: 1px 1px 5px 3px rgba( 255, 0, 0, 0.8 );*/
+}
+
+.botones-down-zoom {
+    display: grid;
+    align-items: center;
+    gap: .6rem;
+    position: absolute;
+    bottom: 3.5rem;
+    right: 1.5rem;
+}
+
+@media (max-width: 992px) {
+    div[role="dialog"] {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+/* Logo Terre3 */
+#logo-terre3-right-bottom {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    z-index: 40;
+    display: flex !important;
+    justify-content: flex-end;
+}
+
+/*Interfaz*/
+
+div[aria-describedby="adminLoginPnl"] {
+    bottom: 14px !important;
+    top: auto !important;
+    padding: 40px;
+    border-color: rgba(230, 231, 232, 1) !important;
+    left: 23px !important;
+    right: 23px !important;
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 500px;
+    width: auto !important;
+    z-index: 1000;
+}
+
+div[aria-describedby="adminLoginPnl"] p {
+    color: chocolate !important;
+}
+
+div[aria-describedby="adminLoginPnl"] .editBtn {
+    font-size: small;
+    font-style: italic;
+    float: right;
+}
+
+div[aria-describedby="setTextEditor"] {
+    border: 3px solid #555 !important;
+}
+
+div[aria-describedby="tools"] button {
+    min-height: auto !important;
+}
+
+div[aria-describedby="advices"] button {
+    min-height: auto !important;
+}
+
+div[aria-describedby="info"] button,
+div[aria-describedby="info"] button * {
+    z-index: 1000000;
+    position: relative;
+    cursor: pointer;
+}
+
+div[aria-describedby="info"] button {
+    color: #fff;
+    font-family: 'Inter', serif;
+    font-weight: 500;
+    padding: 10px;
+    height: auto !important;
+    outline: none;
+    border: none;
+    width: 100%;
+}
+
+div[role="dialog"] h6 {
+    color: rgba(0, 0, 0, 1);
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 14px;
+    margin-left: auto;
+    max-width: 256px;
+    margin-right: auto;
+}
+
+div[role="dialog"] h7 {
+    color: rgba(0, 0, 0, 1);
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 14px;
+    margin-left: auto;
+    max-width: 256px;
+    margin-right: auto;
+    display: block;
+    margin-top: 14px;
+    width: 100%;
+    text-align: center;
+}
+
+div[role="dialog"] p {
+    font-size: 16px;
+    text-align: left !important;
+    color: rgba(141, 145, 152, 1);
+    line-height: 1.1em;
+    font-weight: 300;
+    width: auto;
+    min-height: auto !important;
+    margin: 0;
+    position: static;
+    width: auto !important;
+}
+
+div[role="dialog"] form {
+    font-size: 16px;
+    text-align: left !important;
+    color: rgba(141, 145, 152, 1) !important;
+    line-height: 1.1em;
+    font-weight: 300;
+    width: auto;
+    min-height: auto !important;
+    margin: 0;
+    position: static;
+    width: auto !important;
+    font-family: monospace;
+}
+
+div[role="dialog"] .ui-dialog-content {
+    padding: 0;
+    position: static !important;
+    overflow: hidden;
+    height: auto !important;
+}
+
+div[aria-describedby="info"] #info {
+    width: 100%;
+    max-width: 290px;
+}
+
+div[role="dialog"] .ui-dialog-content>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div[role="dialog"] #info p {
+    text-align: center !important;
+}
+
+div[role="dialog"] div {
+    width: 100%;
+    cursor: initial;
+}
+
+div[role="dialog"] div img {
+    width: 100% !important;
+}
+
+div[role="dialog"] .ui-icon {
+    background: none;
+}
+
+div[role="dialog"] button {
+    margin-top: 0 !important;
+    background-color: var(--mineColor);
+    border-radius: 50px !important;
+    min-height: 60px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+div[role="dialog"] button div {
+    padding: 0 !important;
+}
+
+div[role="dialog"] .fa-solid.fa-xmark {
+    color: rgba(102, 105, 109, 1);
+    font-size: 23px !important;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 10000;
+}
+
+div[role="dialog"] h2 {
+    margin-bottom: 30px;
+}
+
+div[aria-describedby="dlgImagePatreon"] {
+    top: 50% !important;
+    transform: translateY(-50%);
+    height: max-content !important;
+    max-width: fit-content !important;
+    padding: 30px 40px !important;
+    width: 500px !important;
+}
+
+/*Avisos informativos*/
+div[aria-describedby="info"] {
+    top: 50% !important;
+    transform: translateY(-50%);
+    height: max-content !important;
+    max-width: fit-content !important;
+    padding: 30px 40px !important;
+}
+
+div[aria-describedby="info"] button {
+    margin-bottom: 0px;
+    margin-top: 20px !important;
+}
+
+div[aria-describedby="adminLoginPnl"] {
+    top: 50% !important;
+    transform: translateY(-50%);
+    height: max-content !important;
+    max-width: fit-content !important;
+    padding: 30px 40px !important;
+}
+
+div[aria-describedby="adminLoginPnl"] button {
+    margin-bottom: 0px;
+    margin-top: 20px !important;
+}
+
+.setTest4DB {
+    color: chocolate !important;
+    max-height: 175px;
+    overflow-y: auto;
+}
+
+/*Modales full-width*/
+div[aria-describedby="cRight"],div[aria-describedby="dlgInfoTrack"],
+div[aria-describedby="dlgDownTracks"] {
+    width: 100% !important;
+    max-width: 100%;
+    left: 0 !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    height: 100vh !important;
+    border-radius: 0 !important;
+    padding-top: 50px !important;
+    z-index: 10000000 !important;
+}
+
+div[aria-describedby="cRight"] *,
+div[aria-describedby="dlgDownTracks"] * {
+    z-index: 10000000 !important;
+    position: relative;
+}
+
+div[aria-describedby="cRight"] h3 {
+    font-weight: 700;
+}
+
+div[aria-describedby="cRight"] a {
+    color: inherit !important;
+    text-decoration: underline;
+}
+
+.close-modal-style {
+    text-align: right;
+    position: absolute !important;
+    right: 12px;
+    top: 15px;
+    cursor: pointer !important;
+    margin: 0px;
+    width: fit-content !important;
+}
+
+.close-modal-style img {
+    margin: 0 !important;
+}
+
+/* Botón copyright */
+#buttonCright {
+    padding: 2px;
+    position: absolute;
+    bottom: 20px;
+    left: 14px;
+    margin: 0px;
+    color: white !important;
+    font-size: 12px;
+    border-radius: 15px;
+    border: solid rgba(122, 122, 122, 0.45);
+    background: rgba(122, 122, 122, 0.45);
+}
+
+/*Modal textos legales*/
+#cRight img {
+    width: auto !important;
+}
+
+.legal-info-block {
+    font-size: 16px;
+    text-align: left !important;
+    color: rgba(141, 145, 152, 1);
+    line-height: 1.4em;
+    font-weight: 300;
+    width: auto !important;
+    min-height: auto !important;
+    margin: 0;
+    position: static !important;
+    border-bottom: solid 1px #ccc;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 14px;
+    padding: 20px 0;
+}
+
+.ui-widget-content a {
+    color: #FF4B66 !important;
+}
+
+/* Selección - Cambiar */
+
+.contenedor-change-routes {
+    position: absolute;
+    bottom: 30px;
+    transform: translateX(-50%);
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.contenedor-change-routes h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: #fff;
+    font-size: 24px;
+}
+
+input[type='file'] {
+    font-size: 0;
+}
+
+.makeBold {
+    font-size: small !important;
+    width: 25px;
+    height: 25px;
+    padding: 0px;
+}
+
+::file-selector-button {
+    font-size: initial;
+}
+
+select,
+::picker(select) {
+    /*appearance: base-select;*/
+    border: none;
+}
+
+select {
+    border: 2px solid #dddddd;
+    background: #eeeeee;
+    padding: 10px;
+    transition: 0.4s;
+}
+
+select:hover,
+select:focus {
+    background: #dddddd;
+}
+
+select::picker-icon {
+    color: #999999;
+    transition: 0.4s rotate;
+}
+
+select:open::picker-icon {
+    rotate: 180deg;
+}
+
+option {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    color: black;
+    border: 2px solid #dddddd;
+    background: #eeeeee;
+    padding: 10px;
+    transition: 0.4s;
+}
+
+option:first-of-type {
+    border-radius: 8px 8px 0 0;
+}
+
+option:last-of-type {
+    border-radius: 0 0 8px 8px;
+}
+
+option:not(option:last-of-type) {
+    border-bottom: none;
+}
+
+option:nth-of-type(odd) {
+    background: white;
+}
+
+option:hover,
+option:focus {
+    background: plum;
+}
+
+option:checked {
+    font-weight: bold;
+}
+
+option::checkmark {
+    order: 1;
+    margin-left: auto;
+    content: "☑️";
+}
+
+.hide-column {
+    display: none;
+}
+
+.contenedor-change-routes #selectTrack {
+    /*appearance: auto;*/
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    margin: 0px;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.25);
+    padding: 0px;
+
+    /*padding: 8px 20px;*/
+    border-bottom: solid 8px transparent;
+    /*safari*/
+    border-left: solid 15px transparent;
+    /*safari*/
+    border-right: solid 15px transparent;
+    /*safari*/
+    border-top: solid 8px transparent;
+    /*safari*/
+
+    gap: 10px;
+    display: flex;
+    align-items: flex-end;
+}
+
+
+/* Puntos del recorrido */
+div[aria-describedby="dlgIFCdoc"] {
+    padding: 20px 15px;
+}
+
+div[aria-describedby="dlgIFCdoc"] img {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+div[aria-describedby="dlgIFCdoc"] p {
+    font-size: 14px !important;
+    line-height: 1.2em;
+}
+
+/*Listado de tracks*/
+#dlgDownTracksForm>div {
+    position: relative;
+    padding: 16px 0px !important;
+    z-index: 100000;
+    position: relative;
+}
+
+#dlgDownTracksForm>div button {
+    min-height: auto;
+    margin-bottom: 0 !important;
+    padding: 8px 20px;
+    margin:10px;
+}
+
+#dlgDownTracksForm p {
+    font-size: 15px !important;
+}
+
+#dlgDownTracksForm p:first-of-type {
+    font-size: 19px !important;
+    color: #000 !important;
+}
+
+#dlgDownTracksForm>div button div {
+    gap: 7px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#dlgDownTracksForm>div p:first-of-type {
+    font-weight: 700;
+    line-height: 1.2em;
+}

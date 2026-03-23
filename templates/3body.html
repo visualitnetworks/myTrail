@@ -1,0 +1,422 @@
+<div id="loading" class="fadeInDiv"></div>
+
+<div id="contIntro" style="display:none">
+	<img id="logoIntro" alt="logo">
+
+	<div class="seccion-introductoria" id="seccIntro">
+
+		<div class="modal-intro">
+			<h2 idiomax="introTtl" id="introTtl"></h2>
+			<p idiomax="introPrf" id="textContIntro"></p>
+			<div id="myturn">
+				<span><span idiomax="loading" id="loading" style="display: contents;">Cargando </span>0%</span>
+				<progress value="3" max="100"></progress>
+			</div>
+		</div>
+
+		<div class="desarrollado-por">
+			<div><span idiomax="devBy" id="devBy">Desarrollado por</span>&nbsp;</div>
+			<img src="skin/terre3.svg">
+		</div>
+	</div>
+</div>
+
+<a id="logo-terre3-right-bottom" href="https://terre3.es" target="_blank">
+	<img src="skin/cornerTR3.svg" alt="logo-placeholder" style="height: 100%">
+</a>
+
+<p id="GPSaccuration"
+	style="margin: 5px;position: absolute;transform: translate(-50%, 0);left: 50%;background-color: rgba(200,200,0,.5);text-align: center;display: none">
+</p>
+
+<div id="map" class="map"></div>
+<div id="TR3" class="TR3"></div>
+<div id="tools" class="tools"></div>
+<div id="info" class="tools"></div>
+<div id="setTextEditor">
+	Text:<p style="margin: 3px" onmouseover=getFocused()>
+		<input type="button" style="font-weight: 600;" class="makeBold" onClick="setTagAtCursor('b')" value="B"
+			title="Negrita" />
+		<input type="button" style="text-decoration: underline;" class="makeBold" onClick="setTagAtCursor('u')"
+			value="S" title="Subrayado" />
+		<input type="button" style="font-style: italic;" class="makeBold" onClick="setTagAtCursor('i')" value="i"
+			title="Cursiva" />
+		<input type="button" style="padding-bottom: 2px;" class="makeBold" onClick="setTagAtCursor('center')" value="Ξ"
+			title="Centrar texto" />
+		<input type="button" style="padding-bottom: 2px;" class="makeBold" onClick="setTagAtCursor('a')" value="🔗"
+			title="Enlace" />
+		<input type="button" style="padding-bottom: 2px;" class="makeBold" onClick="setSingleTagAtCursor('#hr|')"
+			value="➖" title="línea" />
+		<input type="button" style="padding-bottom: 2px;" class="makeBold" onClick="setSingleTagAtCursor('#br|')"
+			value="↩️" title="Salto de línea" />
+	</p>+emojis
+	<hr>
+	<textarea id="texaClass" rows="10" cols="30" placeholder="Editor de texto" \ maxlength="50"></textarea><span
+		style="font-size: small;"></span><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="Aceptar" onClick="setTextEditorBtn()">
+	&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="Cancelar" onClick="$('#setTextEditor').dialog('close')">
+	<div style="display: none;"></div>
+</div>
+<div id="adminLoginPnl" class="tools" style="overflow: auto;background-color: linen;padding: 10px;max-height: 900px;">
+	<p onclick="$('#adminLoginPnl').dialog('close')" class="close-modal-style"><img src="./skin/icon-close.svg"></p>
+	<div id="userUnLogued">
+		<h6>Editor Login</h6>
+		<form>
+			User: <input type="text" id="name_user" name="name" required>
+			<br>
+			Pass: <input type="password" id="pass_user" name="pass" required>
+			<br>
+		</form>
+		<a href="mailto:support@terre3.es?Subject=recover%20login" style="font-size: small;float:right">Forgot Pass?</a>
+		<button onclick="loginUser()"
+			style="border-radius: 15px;width: 100%; background-color:var(--mineColor); color: white;border: none;">
+			Access
+		</button>
+		<div id="newUserBtn" style="font-size: small;color: lightblue !important;text-align: center;cursor: pointer">New
+			account!</div>
+	</div>
+	<div id="newUser" style="display:none;">
+		<h6>New User</h6>
+		<form>
+			User: <input type="text" id="name_newUser" name="name">
+			<br>
+			Pass: <input type="password" id="pass1_newUser" name="user">
+			<br>
+			Pass: <input type="password" id="pass2_newUser" name="email">
+			<br>
+			Mail: <input type="email" id="email1_newUser" name="email">
+			<br>
+			Mail: <input type="email" id="email2_newUser" name="email">
+			<br>
+			Key : <input type="text" id="key_newUser" name="key">
+			<br>
+		</form>
+		<button id="NewUserBtnLauncher" onclick="newUser()"
+			style="border-radius: 15px;width: 100%;background-color:var(--mineColor);color: white;border: none;cursor: pointer">
+			Create
+		</button>
+		<div id="newUserBtnBack" style="font-size: small;color: lightblue !important;text-align: center;">⬅Back</div>
+	</div>
+	<div id="userLoged" style="display:none;">
+		<div id="menuLoged"
+			onmousemove="this.style.height='auto'; document.getElementById('triangleRedDown').style.display = 'none'"
+			onmouseleave="setTimeout(function(){document.getElementById('menuLoged').style.height='42px'; document.getElementById('triangleRedDown').style.display = 'block'}, 250);"
+			style="overflow:hidden;height: 42px;border:solid 2px;position: absolute;top: 35px;right: 70px;width: 195px;background-color: white;color: coral !important; cursor: pointer">
+			<div id="triangleRedDown" style="text-align: right;position: absolute;top: 8px;left: 3px;
+			color: transparent; text-shadow: 0 0 0 red;">🔻</div>
+			<p style="margin: 6px 3px" id="saveUser2DB" onclick="saveDataTrail()">Guarde su progreso! 💾 <span
+					style="font-size: small;color: #777; width: 100%;display: block;">· Sólo guarda los cambios</span>
+			</p>
+			<hr>
+			<p style="margin: 3px" id="saveUser2DBreload" onclick="saveDataTrail(true)">Guarda y Recarga 💾🔃 <span
+					style="font-size: small;color: #777; width: 100%;display: block;">· Guardar y ver cambios</span></p>
+			<hr>
+			<p style="margin: 3px" onclick="logOutUser(true)">Cerrar edición 👋<span
+					style="font-size: small;color: #777; width: 100%;display: block;">· Cierra conexión al servidor</span></p>
+			<hr>
+			<p style="margin: 3px"><span style="font-size: small;color: #777; width: 100%;display: block;">· Guarda o
+					carga un proyecto</span>Conf:
+				<input type="button" style="font-size: small;" onClick="saveTRTdoc()" value="Save ⬇️"
+					title="Guarda proyecto en local" />
+
+				<input type="file" accept="application/JSON" id="upload" onclick="this.value=null"
+					onchange="loadTRTdoc(this)" hidden />
+				<label
+					style="background-color: #eee;padding: 0.2rem;font-family: sans-serif;border-radius: 0.2rem;cursor: pointer;margin-top: 1rem;color: black;border: solid 1px gray;font-size: small;"
+					for="upload">Load 📃</label>
+			</p>
+			<hr style="margin-bottom: 0px;">
+			<p style="margin: 3px;font-size: small;text-align: center !important;">
+				<span style="font-size: small;color: #777; width: 100%;display: block;">· Manejo y uso del Admin</span>
+				<a href="skin/manualAdmin.pdf" target="_blank">Manual admin</a>
+			</p>
+		</div>
+		<h7 style="color:cornflowerblue">---Zona General---</h7>
+		ℹ️ Aplica la imagen y textos generales del Trail.
+		<section id="globals">
+			<div id="mainOpts">
+
+			</div>
+		</section>
+		<p style="visibility: hidden;">dfokvmdokmrvodmv oskmvo ksf v dlk </p>
+		<h7 style="color:cornflowerblue">---Recorridos---</h7>
+		ℹ️ Añade la información asociada a cada Track del recorrido.
+		<section id="tracks">
+			<table class="tableStyle" id="tableTracks">
+				<thead>
+					<tr>
+						<th id="IDtracks" class="tg-0lax hide-column">IDtracks</th>
+						<th id="gpx" class="tg-0lax">GPX</th>
+						<th id="name" class="tg-0lax">Nombre</th>
+						<th id="place" class="tg-0lax">Lugar</th>
+						<th id="date" class="tg-0lax">Fecha y hora</th>
+						<th id="info" class="tg-0lax">Info addicional</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</section>
+		<h7 style="color:cornflowerblue">---Puntos de Interés---</h7>
+		ℹ️ Añade cada punto de interés (POI) para informar de los puntos de control, avituallamientos, zonas de peligro,
+		indicaciones, etc. Aplica a la "chincheta" 3D y al "panel" de descripción<br>❗Recuerda añadirlos por orden del.
+		recorrido para mejor indexación.
+		<select id="selectTrackPOIs" onchange="selectTrackPOIs()" style="width: 90%;margin: 5px 5%;"></select>
+		<table class="tableStyle" id="tablePOIs" style="display: none;">
+			<thead>
+				<tr>
+					<th id="IDwaypois" class="tg-0lax hide-column">IDwaypois</th>
+					<th id="IDtracks" class="tg-0lax hide-column">IDtracks</th>
+					<th id="coords" class="tg-0lax">Coords</th>
+					<th id="type" class="tg-0lax">Tipo</th>
+					<th id="title" class="tg-0lax">Título Panel</th>
+					<th id="text" class="tg-0lax">Párrafo Panel</th>
+					<th id="image" class="tg-0lax">Imagen Panel</th>
+					<th id="tilt" class="tg-0lax">Inclinación</th>
+					<th class="tg-0lax">Herramientas de Tabla</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+		<section id="waypois">
+
+		</section>
+		<input type="button" value="+Añadir Punto" id="btnPOIs">
+		<h7 style="color:cornflowerblue">---Textos en Mapa---</h7>
+		ℹ️ Añade los textos sobre el mapa que veas relevantes para la prueba, que sean orientativos de la zona para
+		tener en cuenta por los corredores y aficionados.
+		<section id="text2map">
+			<table class="tableStyle" id="tableTexts">
+				<thead>
+					<tr>
+						<th id="IDtext2map" class="tg-0lax hide-column">IDtext2map</th>
+						<th id="coords" class="tg-0lax">Coords</th>
+						<th id="text" class="tg-0lax">Texto</th>
+						<th class="tg-0lax">Herramientas de Tabla</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</section>
+		<input type="button" value="+Añadir Texto" id="btnTexts">
+	</div>
+</div>
+
+<div id="cRight" class="tools">
+
+	<div onclick="$('#cRight').dialog('close')" class="close-modal-style">
+		<img src="./skin/icon-close.svg">
+	</div>
+
+	<h2 idiomax="legalInfo" id="legalInfo">Información Legal</h2>
+
+	<div class="legal-info-block">
+		<img src="skin/ign.png">
+		<p><span idiomax="mapsBy">Mapas ofrecidos por </span>«CC BY 4.0 <a target="_blank"
+				href="http://www.scne.es">SCNE</a>».</p>
+	</div>
+
+	<div class="legal-info-block">
+		<img src="skin/osm.png">
+		<p>Contain data from <a target="_blank" href="https://www.openstreetmap.org">@OpenStreetMaps</a> contributors.
+		</p>
+	</div>
+
+	<div class="legal-info-block">
+		<img src="skin/terre3.png">
+		<p><span idiomax="devBy">Desarrollado por</span> ©<a target="_blank" href="https://Terre3.es">Terre3 by
+				Visualit</a>, product TerreMap.</p>
+	</div>
+
+</div>
+
+<div id="search" class="tools" style="overflow: hidden;"></div>
+
+
+<div id="dataTrack">
+	<div style="width: 50%; float: left">
+		<p style="font-size: 10px;" idiomax="dist" id="dist">DISTANCIA</p>
+		<p id="dataTrackDis" style="font-size: 30px; font-weight: 600;">0,0</p>
+		<p style="font-size: 12px;" id="dataTrackDisUnits">km</p>
+	</div>
+	<div style="width: 50%; float: left">
+		<p style="font-size: 10px;" idiomax="desNvl" id="desNvl">DESNIVEL</p>
+		<p id="dataTrackDes" style="font-size: 30px; font-weight: 600;">0,0</p>
+		<p style="font-size: 12px;" id="dataTrackDesUnits">m</p>
+	</div>
+	<div id="chart_div"></div>
+</div>
+
+<div id="dlgImagePatreon">
+	<p onclick="$('#dlgImagePatreon').dialog('close')" class="close-modal-style"><img src="./skin/icon-close.svg"></p>
+	<img id="imagePatreon" alt="">
+</div>
+
+<div id="dlgInfoTrack">
+	<p onclick="$('#dlgInfoTrack').dialog('close');$('#btnInfoTrack').removeClass('ItemActive').addClass('ItemInActive')"
+		class="close-modal-style">
+		<img src="./skin/icon-close.svg">
+	</p>
+
+	<h2><span idiomax="gInfoTrail" id="gInfoTrail">Información General del Trail</span></h2>
+	<div id="infoTrailDiv" style="display: block;"></div>
+</div>
+
+<div id="dlgDownTracks">
+	<p onclick="$('#dlgDownTracks').dialog('close')" class="close-modal-style">
+		<img src="./skin/icon-close.svg">
+	</p>
+
+	<h2><span idiomax="download" id="download">Descargar</span> <span id="dbclik4line">tracks</span> (<span
+			id="dbclik4lineLerping">GPX</span>)</h2>
+	<div id="dlgDownTracksForm"></div>
+</div>
+
+<div id="dlgIFCdoc"></div>
+
+<div id="progress" style="display:none"></div>
+<div id="popupDiv" style="display:none;position:absolute;z-index:999;background-color:#eee;color:cornflowerblue">
+</div>
+
+<!--ACTIVE BUTTONS-->
+<div class="contenedor-change-routes">
+	<p style="color:#ccc;font-size: small;" idiomax="slctTrack" id="slctTrack">Seleccionar Recorrido</p>
+	<!--<button type="button" id="selectTrack">Cambiar <i class="fa-solid fa-angle-down"> </i> </button>-->
+	<select id="selectTrack" onchange="TR3cfg.selectTrack()"></select>
+</div>
+
+<div class="botones-top-left">
+
+	<button type="button" id="buttonPlay" class="ItemInactive" title="play">
+		<img class="off" src="./skin/icon-play.svg">
+		<img class="on" src="./skin/icon-detener.svg">
+		<span class="off">Play</span>
+		<span class="on">Stop</span>
+	</button>
+
+	<button style="background-color: rgba(200, 200, 255, .5);" type="button" class="btn-circular" id="buttonSpeed"
+		title="Speed">
+		x1
+	</button>
+
+	<button type="button" class="btn-circular" id="buttonBackward" title="Backward">
+		<span>|&lt;</span>
+	</button>
+
+	<button type="button" class="btn-circular" id="buttonForward" title="Forward">
+		<span>>|</span>
+	</button>
+
+</div>
+
+<!--<button type="button" id="buttonPlay" style="position:absolute;
+	top:10px;
+	left:20px;
+	padding:5px;
+	font-size: small;
+	border-radius: 10px;
+	border: solid #fff 1px;" class="fa-solid fa-play ItemInactive" title="play"><span id="buttonPlay"
+		style="font-family: 'Inter var', sans-serif;font-weight: 400;">&nbsp;Recorrer</span>
+</button>-->
+
+<button type="button" id="buttonCright" class="fa-regular fa-copyright"> </button>
+
+<div class="botones-top-right">
+
+	<button type="button" id="buttonLyrs" class="btn-circular ItemInactive" title="Routes" style="display:none">
+		<img src="./skin/icon-mapas.svg">
+	</button>
+
+	<button type="button" id="btnInfoTrack" class="fa-solid fa-info btn-circular ItemInactive" title="info">
+	</button>
+
+	<button type="button" id="downTrack" class="btn-circular ItemInactive" title="download tracks">
+		<img style="max-width:16px" src="./skin/icon-descarga.svg">
+	</button>
+
+	<button type="button" id="geoloc" class="btn-circular ItemInactive" title="Geolocation">
+		<img style="max-width:18px" src="./skin/icon-gps.svg">
+	</button>
+
+	<button type="button" id="adminLogin" class="btn-circular ItemInactive" title="admin-login"
+		style="background-color:lightcyan !important; display: none;">
+		<i style="max-width:18px" class="fa-regular fa-pen-to-square"></i>
+	</button>
+
+</div>
+<!--ACTIVE BUTTONS-->
+
+<button type="button" id="buttonTraks" style="position: absolute;
+	display: none;
+    top: 10px;
+    right: 88px;
+    padding: 5px;
+    font-size: large;
+    width: 34px;
+    border-radius: 20px;
+    border: solid #fff;" class="fa-solid fa-layer-group ItemInactive" title="Routes">
+</button>
+
+<!--<button type="button" id="listFeatures"
+	style="z-Index:1000;position:absolute;bottom:45px;left:20px;color:lightcoral;padding:5px;font-size:large;width:134px;background-color: lightgoldenrodyellow;border-radius: 5px"
+	class="fa-solid fa-star ItemInactive" title="List Zone">
+</button>-->
+
+<button type="button" id="zenital"
+	style="position:absolute;bottom:10px;left:20px;color:lightcoral;padding:5px;font-size:large;width:34px;display:none"
+	class="fa-solid fa-arrows-down-to-line ItemInactive" title="Zenital">
+</button>
+
+<button type="button" id="buttonTerrain"
+	style="position:absolute;bottom:10px;left:20px;color:lightcoral;padding:5px;font-size:large;width:34px;display:none"
+	class="fa-solid fa-mountain ItemInactive" title="Terreno">
+</button>
+<button type="button" id="buttonWalk"
+	style="position:absolute;bottom:10px;left:54px;color:lightcoral;padding:5px;font-size:large;width:34px;display:none"
+	class="fas fa-walking ItemInactive" title="Primera persona">
+</button>
+<button type="button" id="buttonStereo"
+	style="position:absolute;bottom:42px;left:20px;color:lightcoral;padding:5px;font-size:large;width:34px;background: linear-gradient(to left, lightblue, lightpink);display:none"
+	class="fas fa-solid fa-glasses ItemInactive" title="Steroscopy">
+</button>
+
+
+<button type="button"
+	style="z-Index:1000;position:absolute;bottom:10px;right:20px;color:rgb(111, 181, 250);padding:5px;font-size:large;width:34px;display:none"
+	class="fab fa-twitter rrssBtn">
+</button>
+<button type="button"
+	style="z-Index:1000;position:absolute;bottom:10px;right:54px;color:rgb(111, 181, 250);padding:5px;font-size:large;width:34px;display:none"
+	class="fab fa-instagram rrssBtn">
+</button>
+<button type="button"
+	style="z-Index:1000;position:absolute;bottom:10px;right:88px;color:rgb(111, 181, 250);padding:5px;font-size:large;width:34px;display:none"
+	class="fab fa-facebook-f rrssBtn">
+</button>
+<button type="button"
+	style="z-Index:1000;position:absolute;bottom:10px;right:122px;color:rgb(111, 181, 250);padding:5px;font-size:large;width:34px;display:none"
+	class="fab fa-whatsapp rrssBtn">
+</button>
+
+<div class="botones-down-zoom">
+
+	<button type="button" id="zoom+" class="btn-circular ItemInactive" title="Acercar zoom"
+		aria-label="Acercar zoom" onclick="moveForward(1);">
+		<svg class="btn-icon" width="14" height="14" viewBox="0 0 14 14" fill="none"
+			xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+			<path d="M7.5 0.5V6.5H13.5V7.5H7.5V13.5H6.5V7.5H0.5V6.5H6.5V0.5H7.5Z"
+				fill="currentColor" stroke="currentColor" />
+		</svg>
+	</button>
+
+	<button type="button" id="zoom-" class="btn-circular ItemInactive" title="Alejar zoom"
+		aria-label="Alejar zoom" onclick="moveForward(-1);">
+		<svg class="btn-icon" width="14" height="2" viewBox="0 0 14 2" fill="none"
+			xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+			<path d="M14 2H0V0H14V2Z" fill="currentColor" />
+		</svg>
+	</button>
+
+</div>

@@ -1,0 +1,258 @@
+p,
+button,
+div {
+    font-family: 'Inter';
+    font-size: large;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Inter';
+    font-size: large;
+    margin: 15px;
+    color: black;
+    text-align: center;
+}
+
+#dataTrack {
+    position: absolute;
+    width: 131px;
+    top: 60px;
+    left: 14px;
+    /*background-color: rgba(5, 5, 5, 0);*/
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    /*display: none;*/
+    font-size: 10px;
+}
+
+#chart_div {
+    width: 200px;
+    height: 90px;
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    top: -17px;
+    left: 111px;
+}
+
+#chart_div svg circle {
+    /* fill: rgb(0, 0, 0); 
+    -webkit-backdrop-filter: brightness(1000);*/
+    filter: brightness(1000);
+    -webkit-filter: brightness(1000);
+}
+
+button#buttonPlay {
+    border-radius: 50px !important;
+    min-height: 34px;
+    gap: 6px;
+    display: flex;
+    align-items: center !important;
+    padding: 5px 14px !important;
+    border: none;
+    background-color: #fff !important;
+    width: auto !important;
+}
+
+.ItemInActive {
+    background-color: #fff !important;
+}
+
+.ItemActive {
+    background-color: var(--mineColor) !important;
+}
+
+#buttonPlay.ItemActive {
+    background-color: var(--mineColor) !important;
+}
+
+.ItemActive#buttonPlay .off,
+.ItemInactive#buttonPlay .on {
+    display: none;
+}
+
+.ItemActive#buttonPlay .on,
+.ItemInactive#buttonPlay .off {
+    display: block;
+}
+
+.ItemActive#buttonPlay .on {
+    color: white;
+}
+
+#buttonPlay {
+    font-weight: 600 !important;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.botones-top-right button {
+    position: static !important;
+    width: 34px !important;
+    height: 34px !important;
+    color: black !important;
+}
+
+.botones-top-right button img {
+    width: 100%;
+}
+
+.botones-top-right {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+}
+
+.botones-top-left button {
+    position: static !important;
+    width: 34px !important;
+    height: 34px !important;
+    color: black !important;
+}
+
+.botones-top-left button img {
+    width: 100%;
+}
+
+.botones-top-left {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+}
+
+.map {
+    height: 100%;
+    width: 100%;
+    overflow: hidden !important;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden !important;
+    font-family: "Graphik Meetup", helvetica, arial, sans-serif;
+    font-weight: 400;
+}
+
+.TR3 {
+    height: 100%;
+    width: 100%;
+}
+
+.tools {
+    font: 0.7em verdana;
+}
+
+:root {
+    --mineColor: rgb(200, 200, 200);
+    --color-ProgressBar: #ccc;
+    --border-progressBar: 30px 0px 0px 30px;
+}
+
+.ui-dialog-titlebar {
+    padding: 1px !important;
+}
+
+div#dlgIFCdoc {
+    font-size: 0.7em;
+    min-height: 0px !important;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* button.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-close:nth-of-type(1) {
+/*display: none;
+}*/
+.ItemInactive {
+    color: #000 !important;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fadeInDiv {
+    animation-name: fadeIn;
+    animation-duration: 20s;
+    animation-fill-mode: forwards;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 999;
+    margin: 0 auto;
+    position: fixed;
+    background-color: #eee;
+}
+
+.hover-effect-css3d {
+    color: skyblue !important;
+}
+
+.blink_me {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.btnTrack {
+    font-size: small;
+    border-radius: 15px;
+    margin-top: 5px;
+    background-color: var(--mineColor);
+    color: white;
+    border: none;
+    float: right;
+}
+
+.tableStyle {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+
+.tableStyle td, .tableStyle th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.tableStyle tr:nth-child(even){background-color: #f2f2f2;}
+
+.tableStyle tr:hover {background-color: #ddd;}
+
+.tableStyle th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: darkseagreen;
+  color: white;
+}
+
+.minicolors.minicolors-theme-default.minicolors-position-bottom.minicolors-position-left.minicolors-focus {
+    width: 123px;
+}
