@@ -1037,35 +1037,38 @@ function moveForward(go) {
 
 var link2viewIntervalID;
 function link2view(elem) {
-	var inputLinkview = document.getElementById("inputLinkview");
-	if (inputLinkview.style.visibility == 'visible') {
+	var divLinkView = document.getElementById("divLinkView");
+	if (divLinkView.style.visibility == 'visible') {
 		elem.className = elem.className.replace('ItemActive', 'ItemInactive');
-		inputLinkview.style.visibility = 'hidden';
+		divLinkView.style.visibility = 'hidden';
 
 		clearInterval(link2viewIntervalID);
 	} else {
 		elem.className = elem.className.replace('ItemInactive', 'ItemActive');
-		inputLinkview.style.visibility = 'visible';
+		divLinkView.style.visibility = 'visible';
 
 		link2viewIntervalID = setInterval(() => {
-			var pos = TR3.camera.position;
-			var raycaster = TR3.getRayCaster(false);
-			var inter = TR3.getIntersect(raycaster, [TR3cfg.tileGroup]);
-			var tgt = new THREE.Vector3();
-			if (inter && inter[0] && inter[0][0] && inter[0][0].point) {
-				tgt = inter[0][0].point;
-			} else {
-				tgt = TR3.controls.target;
+			if (document.getElementById("inputLinkviewCB").checked) {
+				var pos = TR3.camera.position;
+				var raycaster = TR3.getRayCaster(false);
+				var inter = TR3.getIntersect(raycaster, [TR3cfg.tileGroup]);
+				var tgt = new THREE.Vector3();
+				if (inter && inter[0] && inter[0][0] && inter[0][0].point) {
+					tgt = inter[0][0].point;
+				} else {
+					tgt = TR3.controls.target;
+				}
+
+				spams.set("looktoward", [pos.x, pos.y, pos.z, tgt.x, tgt.y, tgt.z].map(function (each_element) {
+					return Number(each_element.toFixed());
+				}));
+			}else {
+				spams.delete("looktoward");
 			}
-
-			spams.set("looktoward", [pos.x, pos.y, pos.z, tgt.x, tgt.y, tgt.z].map(function (each_element) {
-				return Number(each_element.toFixed());
-			}));
-
 			spams.set("autostart", false);
 			formURL.autostart = false;
 
-			inputLinkview.value = `${location.origin}${location.pathname}?${spams.toString()}`;
+			document.getElementById("inputLinkview").value = `${location.origin}${location.pathname}?${spams.toString()}`;
 		}, 1000);
 	}
 

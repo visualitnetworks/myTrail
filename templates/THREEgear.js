@@ -68,7 +68,7 @@ TR3cfg.setTR32 = function setTR32() {
 				var lookCtmP = TR3cfg.loc.lookCustom.pos;
 				TR3.camera.position.set(lookCtmP.x, lookCtmP.y, lookCtmP.z);
 				var lookCtmT = TR3cfg.loc.lookCustom.tgt;
-				TR3.controls.target.set(lookCtmT.x, lookCtmT.y, lookCtmT.z);
+				TR3.controls.target.set(lookCtmT.x, lookCtmT.y, lookCtmT.z);//
 			}
 
 		}, 50);

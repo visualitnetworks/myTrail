@@ -86,7 +86,7 @@
 			formURL.lang = spams.get("lang").toUpperCase();
 		}
 		if (spams.has("looktoward") && spams.get("looktoward") != "") {
-			formURL.lookToward = spams.get("looktoward").split(',').map(Number);
+			formURL.lookToward = spams.get("looktoward").split(',').map(Number);//[x,y,z]
 		}
 		if (spams.get("autostart") == "true") {
 			formURL.autostart = true;
