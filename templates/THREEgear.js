@@ -73,6 +73,21 @@ TR3cfg.setTR32 = function setTR32() {
 
 		}, 50);
 
+		/*setTimeout(() => {
+			TR3.throughCurveTween(
+				[new THREE.Vector3(-873.6638184930599, 586.9176643053028, -1240.3324908211316),
+				new THREE.Vector3(895.0579551567952, 721.8789704993363, -1832.991835922262),
+				new THREE.Vector3(-5108.140002244143, 1193.312301565678, -59.29576938809515),
+				new THREE.Vector3(-2398.1746444048817,2529.9055310099775,6261.09911546232)
+				], false, 0.5, 'catmullrom', 20000, TR3.camera, 'position', 'Linear', true)
+			TR3.throughCurveTween(
+				[new THREE.Vector3(-345.2329538329599, -111.03240498047072, -483.4012740939482),
+				new THREE.Vector3(-368.4786756671832, -104.98947512821042, -1521.1476534842648),
+				new THREE.Vector3(-3956.134321713298, -16.10337578523543, 508.58093356190074),
+				new THREE.Vector3(-842.1822739029061,280.54440548425987,2837.780823442618)
+				], false, 0.5, 'catmullrom', 20000, TR3.controls, 'target', 'Linear', true)
+		}, 5000);*/
+
 		//TR3.getFeatFromOL( TR3cfg.vecTrail.getSource().getFeatures(), [TR3cfg.tileGroup] );//tubeOl/lineOl
 
 		setItems3D();
